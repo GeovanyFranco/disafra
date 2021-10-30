@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 {% block title %} Categoria-Formulario {% endblock title %}
 {% block content %}
-<div style="margin-top: 4rem;">
-    <form>
-        <label for="id_categoria">Id:</label>
-        <input type="number" id="id_categoria">
-        <label for="nombre_categoria">Nombre:</label>
-        <input type="text" id="nombre_categoria">
-        <label for="descripcion_categoria">Descripción:</label>
-        <textarea id="descripcion_categoria" rows="4" cols="5"></textarea>
-        <label for="categoria">Categoria:</label>
-        <select id="categoria">
-            <option>-----</option>
-        </select>
-        <button>Guardar</button>
+
+<div class="bloque">
+    <h1>Categoria</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div>
+            <input type="number" class="form-control" id="id_categoria" placeholder="ID">
+        </div>
+        <div>
+            <input type="text" class="form-control" id="nombre_categoria" placeholder="Nombre">
+        </div>
+        <div>
+            <select id="categoria" class="form-select">
+                <option selected>Categoria</option>
+                <option>-----</option>
+            </select>
+        </div>
+        <textarea class="form-control" id="descripcion_categoria" placeholder="Descripcion"></textarea>
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+            <button id="eliminar" type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
     </form>
 </div>
 {% endblock content %}

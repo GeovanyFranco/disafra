@@ -65,8 +65,10 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .main-container .contenedor .bloque .formulario textarea {
   width: 91%;
+  margin-top: 5px;
 }
 
 /*
