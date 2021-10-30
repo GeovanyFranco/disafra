@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Visitador-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">VISITADORES</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/visitador/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Celular</th>
+            <th>Proveedor</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for visitador in visitadores %}
+            <td>{{visitador.id_visitador}}</td>
+            <td>{{visitador.persona.nombre}}</td>
+            <td>{{visitador.persona.apellido}}</td>
+            <td>{{visitador.correo}}</td>
+            <td>{{visitador.persona.direccion.direccion}}</td>
+            <td>{{visitador.persona.telefono_num.num_telefono}}</td>
+            <td>{{visitador.proveedor.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

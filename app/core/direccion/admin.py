@@ -19,11 +19,11 @@ class MunicipioAdmin(admin.ModelAdmin):
 
 
 class DireccionAdmin(admin.ModelAdmin):
-    list_display = ['id_direccion','direccion','referencia','municipio','persona']
+    list_display = ['id_direccion','direccion','referencia','municipio']
     list_filter = ['municipio']
     list_editable = ['direccion','referencia']
     list_per_page = 10
-    search_fields = ['referencia','direccion','municipio','persona']
+    search_fields = ['referencia','direccion','municipio']
 
 
 admin.site.register(Departamento,DepartamentoAdmin)

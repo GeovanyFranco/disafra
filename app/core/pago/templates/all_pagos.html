@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Pago-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">PAGO</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/pago/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>No. Pago</th>
+            <th colspan="3">Descripción</th>
+            <th></th>
+            <th></th>
+            <th>Fecha de pago</th>
+            <th>Monto</th>
+            <th>Empleado</th>
+            <th>No. Compra</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for pago in pagos %}
+            <td>{{pago.num_pago}}</td>
+            <td colspan="3">{{descuento.descripcion}}</td>
+            <td></td>
+            <td></td>
+            <td>{{pago.fecha_pago}}</td>
+            <td>{{pago.cantidad_pagada}}</td>
+            <td>{{pago.empleado_cod.persona.nombre}}</td>
+            <td>{{pago.compra_num.num_compra}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

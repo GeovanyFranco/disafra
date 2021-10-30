@@ -1,48 +1,80 @@
 {% extends 'base.html' %}
 {% block title %} Producto-Formulario {% endblock title %}
 {% block content %}
-<div style="margin-top: 4rem;">
-    <form>
-        <label for="cod_producto">Código:</label>
-        <input type="text" id="cod_producto">
-        <label for="nombre_producto">Nombre:</label>
-        <input type="text" id="nombre_producto">
-        <label for="descripcion_producto">Descripción:</label>
-        <textarea id="descripcion_producto" rows="4" cols="5"></textarea>
-        <label for="preciocosto_producto">Precio costo:</label>
-        <input type="number" id="preciocosto_producto">
-        <label for="porcentaje_producto">Porcentaje de ganancia:</label>
-        <input type="number" id="porcentaje_producto">
-        <label for="precioventa_producto">Precio de venta:</label>
-        <input type="number" id="precioventa_producto">
-        <label for="fechaagregado_producto">Fecha de agregado:</label>
-        <input type="date" id="fechaagregado_producto">
-        <label for="fechavencimiento_producto">Fecha de vencimiento:</label>
-        <input type="date" id="fechavencimiento_producto">
-        <label for="recieningreso_producto">Recién ingreso:</label>
-        <input type="checkbox" id="recieningreso_producto">
-        <label for="cantidad_producto">Cantidad:</label>
-        <input type="number" id="cantidad_producto">
-        <label for="marca_producto">Marca:</label>
-        <select id="marca_producto">
-            <option>-----</option>
-            <option>Bayer</option>
-        </select>
-        <label for="sucursal_producto">Sucursal:</label>
-        <select id="sucursal_producto">
-            <option>-----</option>
-            <option>CH</option>
-        </select>
-        <label for="categoria_producto">Categoria:</label>
-        <select id="categoria_producto">
-            <option>-----</option>
-        </select>
-        <label for="proveedor_producto">Proveedor:</label>
-        <select id="proveedor_producto">
-            <option>-----</option>
-            <option>Piersan</option>
-        </select>
-        <button>Guardar</button>
+
+<div class="bloque">
+    <h1>Producto</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div>
+            <input type="text" class="form-control" id="cod_producto" placeholder="Codigo de producto">
+        </div>
+        <div>
+            <input type="text" class="form-control" id="cod_producto" placeholder="Nombre de producto">
+        </div>
+        <textarea class="form-control" id="descripcion_producto" placeholder="Descripcion del producto"></textarea>
+        <div>
+            <input type="number" class="form-control" id="preciocosto_producto" placeholder="Precio de costo">
+        </div>
+        <div>
+            <input type="number" class="form-control" id="preciocosto_producto" placeholder="Precio de venta">
+        </div>
+        <div>
+            <input type="number" class="form-control" id="porcentaje_producto" placeholder="Porcentaje de ganancia">
+        </div>
+        <div>
+            <input type="number" class="form-control" id="cantidad_producto" placeholder="Cantidad">
+        </div>
+        <div>
+            <input type="date" class="form-control" id="fechaagregado_producto" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Fecha de agregado">
+        </div>
+        <div>
+            <input type="date" class="form-control" id="fechavencimiento_producto" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Fecha de vencimiento">
+        </div>
+        
+        <div>
+            <select id="marca_producto" class="form-select">
+                <option selected>Marca</option>
+                <option>-----</option>
+                <option>Bayer</option>
+            </select>
+        </div>
+        <div>
+            <select id="categoria_producto" class="form-select">
+                <option selected>Categoria</option>
+                <option>-----</option>
+            </select>
+        </div>
+        <div>
+            <select id="sucursal_producto" class="form-select">
+                <option selected>Sucursal</option>
+                <option>-----</option>
+                <option>CH</option>
+            </select>
+        </div>
+        <div>
+            <select id="proveedor_producto" class="form-select">
+                <option selected>Proveedor</option>
+                <option>-----</option>
+                <option>Piersan</option>
+            </select>
+        </div>
+        <div>
+            <div class="check1">
+                <input type="radio" role="switch" id="recieningreso_producto">
+                <label for="recieningreso_producto">Ingreso reciente</label>
+            </div>
+        </div>
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+            <button id="eliminar" type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
     </form>
 </div>
+
 {% endblock content %}

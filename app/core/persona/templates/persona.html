@@ -1,4 +1,3 @@
-
 <div>
     <input type="text" class="form-control" id="nombre" placeholder="Nombres">
 </div>
@@ -6,8 +5,11 @@
     <input type="text" class="form-control" id="apellido" placeholder="Apellidos">
 </div>
 <div>
-    <input type="date" class="form-control" id="fechanacimiento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fecha de nacimiento">
+    <input type="date" class="form-control" id="fechanacimiento" data-bs-toggle="tooltip" data-bs-placement="bottom"
+        title="Fecha de nacimiento">
 </div>
 <div>
     <input type="number" class="form-control" id="edad" placeholder="Edad" readonly>
 </div>
+{% include 'telefono.html' %}
+{% include 'direccion.html' %}

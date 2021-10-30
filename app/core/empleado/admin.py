@@ -11,9 +11,9 @@ class PuestoAdmin(admin.ModelAdmin):
 
 
 class EmpleadoAdmin(admin.ModelAdmin):
-    list_display = ['cod_empleado','pass_field','persona','correo','puesto','sucursal_id']
+    list_display = ['cod_empleado','pass_field','persona','correo','puesto','sucursal']
     list_filter = ['puesto','sucursal_id']
-    list_editable = ['pass_field','correo','puesto','sucursal_id']
+    list_editable = ['pass_field','correo','puesto','sucursal']
     list_per_page = 10
     search_fields = ['correo','puesto']
 

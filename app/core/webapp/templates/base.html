@@ -14,7 +14,7 @@
         <title class="title-up"> {% block title %} {% endblock title %}</title>
     </head>
 
-    <body id="body">
+    <body id="body" class="bg-black">
         <header class="header-container" id="header-container-id"> <!--Contenedor de Cabecera-->
             <div class="menu-panel">
                 <button id="btn-show-panel" class="btn-panel">
@@ -37,46 +37,49 @@
         <div class="main-container bg-dark"> <!--Contenedor principal-->
             <div class="left-side-menu" id="left-menu"> <!--Contenedor de menú desplegable-->
                 <a class="btn-module txt-left" id="btn-home" href="/?b=home">
-                    <h4>Home</h4>
+                    <h4 class="text-center">Inicio</h4>
                 </a>
-                <a class="btn-module txt-left" id="btn-categoria" href="/categoria?b=categoria">
-                    <h4>Categoria</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-cliente" href="/cliente?b=cliente">
-                    <h4>Cliente</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-compra" href="/compra?b=compra">
-                    <h4>Compra</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-cotizacion" href="/cotizacion?b=cotizacion">
-                    <h4>Cotización</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-descuento" href="/descuento?b=descuento">
-                    <h4>Descuento</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-empleado" href="/empleado?b=empleado">
-                    <h4>Empleado</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-pago" href="/pago?b=pago">
-                    <h4>Pago</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-producto" href="/producto?b=producto">
-                    <h4>Producto</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-proveedor" href="/proveedor?b=proveedor">
-                    <h4>Proveedor</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-sucursal" href="/sucursal?b=sucursal">
-                    <h4>Sucursal</h4>
-                </a>
-                <a class="btn-module txt-left" id="btn-venta" href="/venta?b=venta">
-                    <h4>Venta</h4>
-                </a>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                      Usuarios
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark text-light">
+                      <li><a class="dropdown-item text-light" id="btn-cliente" href="/cliente?b=cliente">Cliente</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-empleado" href="/empleado?b=empleado">Empleado</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-proveedor" href="/proveedor?b=proveedor">Proveedor</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-visitador" href="/visitador?b=visitador">Visitador</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                      Operaciones
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark text-light">
+                      <li><a class="dropdown-item text-light" id="btn-compra" href="/compra?b=compra">Compra</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-venta" href="/venta?b=venta">Venta</a></li>
+                      <!-- <li><a class="dropdown-item text-light" id="btn-cotizacion" href="/cotizacion?b=cotizacion">Cotizacion</a></li> -->
+                      <li><a class="dropdown-item text-light" id="btn-pago" href="/pago?b=pago">Pago</a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                      Administración
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark text-light">
+                      <li><a class="dropdown-item text-light" id="btn-sucursal" href="/sucursal?b=sucursal">Sucursal</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-producto" href="/producto?b=producto">Producto</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-categoria" href="/categoria?b=categoria">Categoria</a></li>
+                      <li><a class="dropdown-item text-light" id="btn-descuento" href="/descuento?b=descuento">Descuento</a></li>
+                    </ul>
+                </div>
             </div>
             <!--Contenido de página-->
             <div class="contenedor">
                 {% block content %} {% endblock content %}
             </div>
+
         </div>
 
         <footer>

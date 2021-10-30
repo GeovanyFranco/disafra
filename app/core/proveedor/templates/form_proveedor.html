@@ -1,17 +1,29 @@
 {% extends 'base.html' %}
 {% block title %} Proveedor-Formulario {% endblock title %}
 {% block content %}
-<div style="margin-top: 4rem;">
-    <form>
-        <label for="id_proveedor">Id:</label>
-        <input type="number" id="id_proveedor">
-        <label for="nombre_proveedor">Nombre:</label>
-        <input type="text" id="nombre_proveedor">
-        <label for="correo_proveedor">Nombre:</label>
-        <input type="email" id="correo_proveedor">
+
+<div class="bloque">
+    <h1>Proveedor</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div>
+            <input type="number" class="form-control" id="id_proveedor" placeholder="ID proveedor">
+        </div>
+        <div>
+            <input type="text" class="form-control" id="nombre_proveedor" placeholder="Nombre de proveedor">
+        </div>
+        <div id="colspan-2">
+            <input type="email" class="form-control" id="correo_proveedor" placeholder="Correo de proveedor">
+        </div>
         {% include 'direccion.html' %}
         {% include 'telefono.html' %}
-        <button>Guardar</button>
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+            <button id="eliminar" type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
     </form>
 </div>
 {% endblock content %}

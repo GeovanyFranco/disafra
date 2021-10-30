@@ -1,17 +1,32 @@
 {% extends 'base.html' %}
 {% block title %} Sucursal-Formulario {% endblock title %}
 {% block content %}
-<div style="margin-top: 4rem;">
-    <form>
-        <label for="id_sucursal">Id:</label>
-        <input type="text" id="id_sucursal">
-        <label for="nombre_sucursal">Nombre:</label>
-        <input type="text" id="nombre_sucursal">
-        <label for="correo_sucursal">E-mail:</label>
-        <input type="email" id="correo_sucursal">
+
+<div class="bloque">
+    <h1>Sucursal</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="id_sucursal" placeholder="Id">
+        </div>
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="nombre_sucursal" placeholder="Nombre">
+        </div>
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="correo_sucursal" placeholder="Correo">
+        </div>
+
         {% include 'direccion.html' %}
+        
         {% include 'telefono.html' %}
-        <button>Guardar</button>
+
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+            <button id="eliminar" type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
     </form>
 </div>
 {% endblock content %}

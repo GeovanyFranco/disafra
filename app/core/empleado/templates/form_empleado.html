@@ -1,30 +1,47 @@
 {% extends 'base.html' %}
 {% block title %} Empleado-Formulario{% endblock title %}
 {% block content %}
-<div style="margin-top: 4rem;">
-    <form>
-        <label for="cod_empleado">Código de empleado:</label>
-        <input type="text" id="cod_empleado">
-        <label for="contra_empleado">Contraseña:</label>
-        <input type="password" id="contra_empleado">
-        <label for="contra_confirm_empleado">Confimar contraseña:</label>
-        <input type="password" id="contra_confirm_empleado">
-        <label for="correo_empleado">E-mail:</label>
-        <input type="text" id="correo_empleado">
+<div class="bloque">
+    <h1>Empleado</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="cod_empleado" placeholder="Codigo de empleado">
+        </div>
         {% include 'persona.html' %}
-        <label for="sucursal_empleado">Sucursal:</label>
-        <select id="sucursal_empleado">
-            <option>-----</option>
-            <option>CH</option>
-            <option>CH2</option>
-        </select>
-        <label for="puesto_empleado">Puesto:</label>
-        <select id="puesto_empleado">
-            <option>-----</option>
-            <option>Vendedor</option>
-            <option>Cajero</option>
-        </select>
-        <button>Guardar</button>
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="correo_empleado" placeholder="Correo">
+        </div>
+        <div>
+            <input type="text" class="form-control" id="contra_empleado" placeholder="Contraseña">
+        </div>
+        <div>
+            <input type="text" class="form-control" id="contra_confirm_empleado" placeholder="Confimar contraseña">
+        </div>
+        <div>
+            <select id="sucursal_empleado" class="form-select">
+                <option selected>Sucursal</option>
+                <option>-----</option>
+                <option>CH</option>
+                <option>CH2</option>
+            </select>
+        </div>
+        <div>
+            <select id="puesto_empleado" class="form-select">
+                <option selected>Puesto</option>
+                <option>-----</option>
+                <option>Vendedor</option>
+                <option>Cajero</option>
+            </select>
+        </div>
+
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+            <button id="eliminar" type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
     </form>
 </div>
 {% endblock content %}

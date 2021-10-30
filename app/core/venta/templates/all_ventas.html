@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Venta-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">VENTAS</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/venta/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>No. Venta</th>
+            <th>Nit</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Empleado</th>
+            <th>Fecha de venta</th>
+            <th>Sucursal</th>
+            <th>Total</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for venta in ventas %}
+            <td>{{venta.num_venta}}</td>
+            <td>{{venta.cliente_nit.nit_cliente}}</td>
+            <td>{{venta.cliente_nit.persona.nombre}}</td>
+            <td>{{venta.cliente_nit.persona.apellido}}</td>
+            <td>{{venta.empleado_cod.cod_empleado}} - {{venta.empleado_cod.persona.nombre}}</td>
+            <td>{{venta.fecha_venta}}</td>
+            <td>{{venta.sucursal.nombre}}</td>
+            <td>{{venta.total}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

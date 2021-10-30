@@ -1,2 +1,97 @@
 {% extends 'base.html' %}
 {% block title %} Compra-Formulario {% endblock title %}
+
+{% block content %}
+
+<div class="bloque">
+    <h1>Compra</h1>
+    <div class="opciones">
+        <button id="nuevo" type="submit" class="btn btn-success">Nuevo</button>
+        <button id="listar" type="submit" class="btn btn-primary">Lista</button>
+    </div>
+    <form class="formulario">
+        <div id="">
+            <input type="number" class="form-control" id="num_compra" placeholder="Número de compra">
+        </div>
+        <div>
+            <input type="date" class="form-control" id="fecha_compra" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Fecha de compra">
+        </div>
+        <div id="">
+            <input type="text" class="form-control" id="total_pagado" placeholder="Total pagado">
+        </div>
+        <div>
+            <input type="date" class="form-control" id="fecha_entregado" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Fecha de recibido">
+        </div>
+        <div class="check1">
+            <div class="form-check form-switch gap-2">
+                <input class="form-check-input" type="checkbox" role="switch" id="pagado" checked>
+                <label class="form-check-label" for="pagado">Pagado</label>
+            </div>
+        </div>
+        <div class="check1">
+            <div class="form-check form-switch gap-2">
+                <input class="form-check-input" type="checkbox" role="switch" id="entregado" checked>
+                <label class="form-check-label" for="entregado">Recibido</label>
+            </div>
+        </div>
+
+        <div>
+            <select id="empleado_cod" class="form-select">
+                <option selected>Empleado</option>
+                <option>-----</option>
+                <option>0 - Amner Pérez</option>
+                <option>1 - Geovanny Franco</option>
+            </select>
+        </div>
+        <div>
+            <select id="visitador" class="form-select">
+                <option selected>Visitador</option>
+                <option>-----</option>
+            </select>
+        </div>
+        <textarea id="descripcion" class="form-control" placeholder="Descripcion"></textarea>
+        <div id="colspan-2">
+            <input type="text" class="form-control" id="agregar_producto" placeholder="Agregar producto">
+            <button class="btn btn-outline-info" type="button">AGREGAR</button>
+        </div>
+        <div id="colspan-2">
+            <table class="table text-light text-center m-2">
+                <tr>
+                    <th colspan="6">
+                        <h5 class="fw-bold"> DETALLE DE COMPRA</h5>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>ASP-TAB-500MG</td>
+                    <td>Aspirina en tableta 500mg</td>
+                    <td>2</td>
+                    <td>Q10.00</td>
+                    <td>Q20.00</td>
+                    <td>
+                        <button type="button" class="btn btn-ms btn-danger">X</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3"></th>
+                    <th>Total</th>
+                    <td>Q20.00</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id="opciones2">
+            <button id="guardar" type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

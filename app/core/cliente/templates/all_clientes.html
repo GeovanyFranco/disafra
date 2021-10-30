@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Cliente-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">CLIENTES</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/cliente/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>NIT</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Mayorista</th>
+            <th>Celular</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for cliente in clientes %}
+            <td>{{cliente.nit_cliente}}</td>
+            <td>{{cliente.persona.nombre}}</td>
+            <td>{{cliente.persona.apellido}}</td>
+            <td>{{cliente.persona.direccion.direccion}}</td>
+            <td>{% if cliente.mayorista == True %} <input type="checkbox" checked disabled>{% endif %}</td>
+            <td>{{cliente.persona.telefono_num.num_telefono}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

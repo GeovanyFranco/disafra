@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Producto-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">PRODUCTOS</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/producto/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Ganancia(%)</th>
+            <th>Precio venta</th>
+            <th>Precio costo</th>
+            <th>Agregado</th>
+            <th>Vencimiento</th>
+            <th>Recién ingreso</th>
+            <th>Cantidad</th>
+            <th>Marca</th>
+            <th>Sucursal</th>
+            <th>Categoria</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for producto in productos %}
+            <td>{{producto.cod_producto}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.decripcion}}</td>
+            <td>{{producto.porcentaje_ganancia}}</td>
+            <td>{{producto.precio_venta}}</td>
+            <td>{{producto.fecha_agregado}}</td>
+            <td>{{producto.fecha_vencimiento}}</td>
+            <td>{% if producto.recien_ingreso == True %} <input type="checkbox" checked disabled>{% endif %}</td>
+            <td>{{producto.cantidad}}</td>
+            <td>{{producto.marca.nombre}}</td>
+            <td>{{producto.sucursal.nombre}}</td>
+            <td>{{producto.categoria.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Empleado-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">EMPLEADOS</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/empleado/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Correo</th>
+            <th>Celular</th>
+            <th>Sucursal</th>
+            <th>Puesto</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for empleado in empleados %}
+            <td>{{empleado.cod_empleado}}</td>
+            <td>{{empleado.persona.nombre}}</td>
+            <td>{{empleado.persona.apellido}}</td>
+            <td>{{empleado.persona.direccion.direccion}}</td>
+            <td>{{empleado.correo}}</td>
+            <td>{{cliente.persona.telefono_num.num_telefono}}</td>
+            <td>{{empleado.sucursal.nombre}}</td>
+            <td>{{empleado.puesto.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

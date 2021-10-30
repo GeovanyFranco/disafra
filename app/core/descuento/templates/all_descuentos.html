@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} Descuento-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold"> CLIENTES</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/descuento/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>Código</th>
+            <th>Porcentaje(%)</th>
+            <th colspan="3">Descripción</th>
+            <th></th>
+            <th></th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for descuento in descuentos %}
+            <td>{{descuento.cod_descuento}}</td>
+            <td>{{descuento.porcentaje}}</td>
+            <td colspan="3">{{descuento.descripcion}}</td>
+            <td></td>
+            <td></td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}

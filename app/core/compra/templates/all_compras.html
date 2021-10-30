@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Compra-Listado {% endblock title %}
+{% block content %}
+<div id="colspan-2">
+    <h5 class="fw-bold">COMPRA</h5>
+    <button class="btn btn-ms btn-primary"><a class="text-light" href="/compra/add">AGREGAR</a></button>
+    <table class="table text-light text-center m-2">
+        <tr>
+            <th>No. Compra</th>
+            <th>Descripción</th>
+            <th>Total</th>
+            <th>Total pagado</th>
+            <th>Fecha compra</th>
+            <th>Entregado</th>
+            <th>Fecha entregado</th>
+            <th>Visitador</th>
+            <th>Empleado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            {% for compra in compras %}
+            <td>{{compra.num_compra}}</td>
+            <td>{{compra.descripcion}}</td>
+            <td>{{compra.total}}</td>
+            <td>{{compra.total_pagado}}</td>
+            <td>{% if compra.pagado == True %} <input type="checkbox" checked disabled>{% endif %}</td>
+            <td>{{compra.fecha_compra}}</td>
+            <td>{% if compra.entregado == True %} <input type="checkbox" checked disabled>{% endif %}</td>
+            <td>{{compra.fecha_entregado}}</td>
+            <td>{{compra.visitador.persona.nombre}}</td>
+            <td>{{compra.empleado_cod.persona.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-ms btn-success">O</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ms btn-danger">X</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endblock content %}
